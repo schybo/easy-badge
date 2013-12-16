@@ -27,16 +27,26 @@ function resize_image($file, $w, $h, $crop=FALSE) {
     return $dst;
 }
 
-//$file1 = resize_image('http://i.imgur.com/30v87S8.png', 100, 100);
-//$img = '/badge.png';
-//file_put_contents($img, file_get_contents($file1));
-
 //This file path DOES NOT change
 $file2 = 'http://i.imgur.com/JBqXqTW.png';
 
 // First image
-$image = resize_image('http://i.imgur.com/YGsIlOx.png', 100, 100);//imagecreatefrompng($file1);
-//$image->resize(100,100);
+list($width, $height, $type, $attr) = getimagesize('http://i.imgur.com/YGsIlOx.png');
+//echo "Image width " .$width;
+//echo "Image type " .$type;
+//echo "Image type " .IMAGETYPE_PNG;
+
+if ($width == 100 && $height == 100) {
+	if ($type == 2) { //Checking to see if it is a JPEG
+		$image = imagecreatefromjpeg('http://i.imgur.com/YGsIlOx.png');
+	} elseif ($type == 3) { //Checking to see if it is a PNG
+		$image = imagecreatefrompng('http://i.imgur.com/YGsIlOx.png');
+	} else {
+		echo "Sorry that image type is not supported";
+	}
+} else {
+	$image = resize_image('http://i.imgur.com/YGsIlOx.png', 100, 100);
+}
 
 // Second image (the overlay)
 $overlay = imagecreatefrompng($file2);
@@ -50,7 +60,7 @@ imagedestroy($overlay);
 
 // Output the results
 header('Content-type: image/png');
-imagepng($image, 'badge4.png');
+imagepng($image, 'badge6.png');
 imagedestroy($image);
 
 ?>
