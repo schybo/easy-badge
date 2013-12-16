@@ -2,7 +2,6 @@
 
 if (isset($_POST['Submit'])) { 
 	$img_loc = strip_tags($_POST["img_loc"]); 
-	//echo "Image width " .$img_loc;
 }
 
 function resize_image($file, $w, $h, $crop=FALSE) {
@@ -36,21 +35,21 @@ function resize_image($file, $w, $h, $crop=FALSE) {
 $file2 = 'http://i.imgur.com/JBqXqTW.png';
 
 // First image
-list($width, $height, $type, $attr) = getimagesize('http://i.imgur.com/YGsIlOx.png');
+list($width, $height, $type, $attr) = getimagesize($img_loc);
 //echo "Image width " .$width;
 //echo "Image type " .$type;
 //echo "Image type " .IMAGETYPE_PNG;
 
 if ($width == 100 && $height == 100) {
 	if ($type == 2) { //Checking to see if it is a JPEG
-		$image = imagecreatefromjpeg('http://i.imgur.com/YGsIlOx.png');
+		$image = imagecreatefromjpeg($img_loc);
 	} elseif ($type == 3) { //Checking to see if it is a PNG
-		$image = imagecreatefrompng('http://i.imgur.com/YGsIlOx.png');
+		$image = imagecreatefrompng($img_loc);
 	} else {
 		echo "Sorry that image type is not supported";
 	}
 } else {
-	$image = resize_image('http://i.imgur.com/YGsIlOx.png', 100, 100);
+	$image = resize_image($img_loc, 100, 100);
 }
 
 // Second image (the overlay)
