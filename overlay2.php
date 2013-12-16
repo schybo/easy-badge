@@ -1,5 +1,10 @@
 <?php 
 
+if (isset($_POST['Submit'])) { 
+	$img_loc = strip_tags($_POST["img_loc"]); 
+	//echo "Image width " .$img_loc;
+}
+
 function resize_image($file, $w, $h, $crop=FALSE) {
     list($width, $height) = getimagesize($file);
     $r = $width / $height;
