@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="http://www.nihilogic.dk/labs/canvas2image/canvas2image.js"></script>
+        <script>
+            function draw(){
+                var canvas = document.getElementById("thecanvas");
+                var ctx = canvas.getContext("2d");
+                var imageObj1 = new Image();
+                var imageObj2 = new Image();
+                imageObj1.src = "picture.png"
+                imageObj2.src = "badge-ring4.png";
+                imageObj1.onload = function() {
+                   ctx.drawImage(imageObj1, 0, 0, 100, 100);
+                   imageObj2.onload = function() {
+                      ctx.drawImage(imageObj2, 0, 0, 100, 100);
+                      //var img = c.toDataURL("image/png");
+                      //var img = c.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+                      //window.location.href=image; // it will save locally
+                      //document.write('<img src="' + img + '" width="100" height="100"/>');
+                   }
+                }
+            }
+
+            function to_image(){
+                var canvas = document.getElementById("thecanvas");
+                document.getElementById("theimage").src = canvas.toDataURL();
+                Canvas2Image.saveAsPNG(canvas);
+            }
+        </script>
+    </head>
+    <body onload="draw()">
+        <canvas width=100 height=100 id="thecanvas"></canvas>
+        <div><button onclick="to_image()">Draw to Image</button></div>
+        <image id="theimage"></image>
+    </body>
+</html>

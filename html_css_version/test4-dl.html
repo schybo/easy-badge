@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200" style="display:none;"></canvas>
+    <img id="canvasImg" alt="Right click to save me!">
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      // draw cloud
+      var imageObj1 = new Image();
+      var imageObj2 = new Image();
+      imageObj1.src = "picture.png";
+      imageObj2.src = "badge-ring4.png";
+      imageObj1.onload = function() {
+         context.drawImage(imageObj1, 0, 0, 100, 100);
+         imageObj2.onload = function() {
+            context.drawImage(imageObj2, 0, 0, 100, 100);
+         }
+      }
+
+      function make_dl() {
+        // save canvas image as data url (png format by default)
+        var dataURL = canvas.toDataURL();
+
+        // set canvasImg image src to dataURL
+        // so it can be saved as an image
+        document.getElementById('canvasImg').src = dataURL;
+      }
+
+      setTimeout(make_dl, 1000);
+
+    </script>
+  </body>
+</html>
