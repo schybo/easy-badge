@@ -63,6 +63,7 @@ imagecopy($image, $overlay, 0, 0, 0, 0, $width, $height);
 imagedestroy($overlay);
 
 // Output the results
+echo "Thank you for using EasyBadge Creator!";
 header('Content-type: image/png');
 imagepng($image, 'badge6.png');
 imagedestroy($image);
