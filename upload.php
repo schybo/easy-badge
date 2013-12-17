@@ -3,8 +3,11 @@
 if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0)) {
   //Check if the file is JPEG image and it's size is less than 350Kb
   $filename = basename($_FILES['uploaded_file']['name']);
+  $temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
+  echo $temp_file;
   $ext = substr($filename, strrpos($filename, '.') + 1);
-  if (($ext == "jpg") && ($_FILES["uploaded_file"]["type"] == "image/jpeg") && 
+  if ((($ext == "png") && ($_FILES["uploaded_file"]["type"] == "image/png") ||
+    ($ext == "gif") && ($_FILES["uploaded_file"]["type"] == "image/gif")) && 
     ($_FILES["uploaded_file"]["size"] < 350000)) {
     //Determine the path to which we want to save this file
       $newname = dirname(__FILE__).'/upload/'.$filename;
@@ -20,7 +23,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
          echo "Error: File ".$_FILES["uploaded_file"]["name"]." already exists";
       }
   } else {
-     echo "Error: Only .jpg images under 350Kb are accepted for upload";
+     echo "Error: Only .png &#38; .gif images under 350Kb are accepted for upload";
   }
 } else {
  echo "Error: No file uploaded";
