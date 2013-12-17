@@ -26,6 +26,39 @@ body {
 	margin-right: auto;
 }
 
+.med_header {
+	width: 600px;
+	font-size: 4em;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.bmed_header {
+	width: 600px;
+	font-size: 4em;
+	margin-top: 0.05em;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 0.5em;
+}
+
+.sm_header {
+	width: 600px;
+	font-size: 2em;
+	margin-top: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vsm_header {
+	width: 500px;
+	font-size: 2em;
+	margin-top: 0.25em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .instruction {
 	width: 750px;
 	margin-top: 0.5em;
@@ -52,4 +85,11 @@ body {
 	margin-top: 3em;
 	margin-left: auto;
 	margin-right: auto;	
+}
+
+.img_holder {
+	width: 125px;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;		
 }

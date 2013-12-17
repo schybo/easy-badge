@@ -31,7 +31,7 @@
 	</div>
 	</br>
 	<ul>
-	  <li><b>Note:</b> if the image is larger than 100&#42;100, EasyBadge will resize the image (quality could be reduced)</li>
+	  <li><b>Note:</b> If the image is larger than 100&#42;100, EasyBadge will resize the image (quality could be reduced)</li>
 	  <li><b>Note:</b> To make sure you don't lose quality, try to upload badges than are originally 100&#42;100</li>
 	  <li><b>Note:</b> You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
 	  <li><b>Note:</b> Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>

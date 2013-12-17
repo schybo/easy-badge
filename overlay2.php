@@ -1,3 +1,37 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>EasyBadge Creator</title>
+  <meta name="description" content="EasyBadge Creator - create badges with fancy rims for gamification in the work place easily">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
+  <style type="text/css">
+	.med_header {
+		font-family: 'vag_rounded_black_ssibold';
+	}
+	.bmed_header {
+		font-family: 'vag_rounded_black_ssibold';
+	}
+	.sm_header {
+		font-family: 'vag_rounded_black_ssibold';
+	}
+	.vsm_header {
+		font-family: 'vag_rounded_black_ssibold';
+	}
+  </style>
+</head>
+<body>
+<div class="med_header">Thank you for using</div>
+<div class="bmed_header">EasyBadge Creator!</div>
+<div class="sm_header">Please right click the image and choose</div>
+<div class="vsm_header">save as to download them image </div>
+</body>
+</html>
+
 <?php 
 
 session_start();
@@ -71,14 +105,14 @@ imagedestroy($overlay);
 $save_file = '/badge.png';
 
 // Output the results
-echo "Thank you for using EasyBadge Creator!";
-echo '</br>';
-echo "Please right click the image and choose save as to download them image";
+//echo '<div class="header">Thank you for using EasyBadge Creator!</div>';
+//echo '</br>';
+//echo '<div class="sm_header">Please right click the image and choose save as to download them image</div>';
 //header('Content-type: image/png');
 imagepng($image, 'badge.png');
 //header("Location: http://easybadge.herokuapp.com/badge.png");
 //exit();
-echo '</br><img src="' . $save_file . '"/>';
+echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
 imagedestroy($image);
 
 }
