@@ -36,7 +36,7 @@ function resize_image($file, $w, $h, $crop=FALSE) {
 //This file path DOES NOT change
 //This is the hardcoded badge overlay
 //$file2 = 'http://i.imgur.com/JBqXqTW.png';
-$file2 = '/badge-ring.png';
+$file2 = 'badge-ring.png';
 
 // First image
 list($width, $height, $type, $attr) = getimagesize($img_loc);
@@ -45,6 +45,7 @@ list($width, $height, $type, $attr) = getimagesize($img_loc);
 //echo "Image type " .IMAGETYPE_PNG;
 
 if ($width == 100 && $height == 100) {
+	//$image = imagecreatefrompng($img_loc);
 	if ($type == 1) { //Checking to see if it is a GIF
 		$image = imagecreatefromgif($img_loc);
 	} elseif ($type == 3) { //Checking to see if it is a PNG

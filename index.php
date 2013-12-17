@@ -20,6 +20,7 @@
   <li>You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
   <li><b>Note:</b> Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>
   <li><b>Note:</b> Currently this badge creator only overlays the image. So no 3D badge creations are available</li>
+  <li><b>Note:</b> At this time we only support .PNG &#38; .GIF due to limitations of the Heroku hosting</li>
 </ul>
 
 <form action="overlay2.php" method="post">
