@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 if (isset($_POST['Submit'])) { 
 	$img_loc = strip_tags($_POST["img_loc"]);
 	//echo "Image width " .$img_loc; 
@@ -74,6 +76,7 @@ header('Content-type: image/png');
 imagepng($image, 'badge.png');
 echo '</br><img src="' . $save_file . '"/>';
 imagedestroy($image);
+
 }
 
 ?>
