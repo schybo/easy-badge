@@ -62,10 +62,14 @@ list($width, $height, $type, $attr) = getimagesize($file2);
 imagecopy($image, $overlay, 0, 0, 0, 0, $width, $height);
 imagedestroy($overlay);
 
+//filename to save badge to
+$save_file = '/badge.png';
+
 // Output the results
 echo "Thank you for using EasyBadge Creator!";
 header('Content-type: image/png');
-imagepng($image, 'badge6.png');
+imagepng($image, 'badge.png');
+echo '</br><div style="margin-left: 5%;"><img src="' . $save_file . '"/></div>';
 imagedestroy($image);
 
 ?>
