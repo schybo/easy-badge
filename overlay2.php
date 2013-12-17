@@ -2,10 +2,10 @@
 
 if (isset($_POST['Submit'])) { 
 	$img_loc = strip_tags($_POST["img_loc"]);
-	echo "Image width " .$img_loc; 
+	//echo "Image width " .$img_loc; 
 }
 
-/*function resize_image($file, $w, $h, $crop=FALSE) {
+function resize_image($file, $w, $h, $crop=FALSE) {
     list($width, $height) = getimagesize($file);
     $r = $width / $height;
     if ($crop) {
@@ -42,13 +42,14 @@ list($width, $height, $type, $attr) = getimagesize($img_loc);
 //echo "Image type " .IMAGETYPE_PNG;
 
 if ($width == 100 && $height == 100) {
-	if ($type == 2) { //Checking to see if it is a JPEG
+	$image = imagecreatefrompng($img_loc);
+	/*if ($type == 2) { //Checking to see if it is a JPEG
 		$image = imagecreatefromjpeg($img_loc);
 	} elseif ($type == 3) { //Checking to see if it is a PNG
 		$image = imagecreatefrompng($img_loc);
 	} else {
 		echo "Sorry that image type is not supported";
-	}
+	}*/
 } else {
 	$image = resize_image($img_loc, 100, 100);
 }
@@ -71,6 +72,6 @@ echo "Thank you for using EasyBadge Creator!";
 header('Content-type: image/png');
 imagepng($image, 'badge.png');
 echo '</br><div style="margin-left: 5%;"><img src="' . $save_file . '"/></div>';
-imagedestroy($image);*/
+imagedestroy($image);
 
 ?>
