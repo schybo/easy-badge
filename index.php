@@ -8,7 +8,7 @@
   <meta name="description" content="EasyBadge Creator - create badges with fancy rims for gamification in the work place easily">
   <meta name="author" content="SitePoint">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  
+
   <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
 	.header {
