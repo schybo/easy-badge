@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'vag_rounded_black_ssibold';
+    src: url('vag_rounded_black_ssi_bold-webfont.eot');
+    src: url('vag_rounded_black_ssi_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('vag_rounded_black_ssi_bold-webfont.woff') format('woff'),
+         url('vag_rounded_black_ssi_bold-webfont.ttf') format('truetype'),
+         url('vag_rounded_black_ssi_bold-webfont.svg#vag_rounded_black_ssibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	/*Fix the linear gradient to work on all browser*/
+    background: linear-gradient(rgb(0, 143, 204) 0%, rgb(82, 185, 230) 100%) no-repeat center center fixed;
+    -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.header {
+	width: 700px;
+	font-size: 5em;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.instruction {
+	width: 750px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.address {
+	width: 250px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.submit {
+	width: 100px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.badge_line {
+	width: 625px;
+	margin-top: 3em;
+	margin-left: auto;
+	margin-right: auto;	
+}
