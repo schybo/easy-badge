@@ -74,8 +74,8 @@ $save_file = 'http://easybadge.herokuapp.com/badge.png';
 //echo "Thank you for using EasyBadge Creator!";
 //header('Content-type: image/png');
 imagepng($image, 'badge.png');
-header("Location: http://easybadge.herokuapp.com/badge.png");
-exit();
+//header("Location: http://easybadge.herokuapp.com/badge.png");
+//exit();
 echo '</br><img src="' . $save_file . '"/>';
 imagedestroy($image);
 
