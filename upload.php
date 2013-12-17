@@ -123,7 +123,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             //echo '<img src="' . $save_file . '"/>';
             imagedestroy($image);
             //Deletes the acutal uploaded file
-            unlink($newname);
+            //unlink($newname);
 
         } else {
            echo "Error: A problem occurred during file upload!";
