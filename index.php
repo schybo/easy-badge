@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
-	.header {
+	.header, .xxsm_header {
 		font-family: 'vag_rounded_black_ssibold';
 	}
   </style>
@@ -30,12 +30,18 @@
 		<input type="Submit" name="Submit" style="width:100px; height:100px;">
 		</form>
 	</div>
-	<div class="address">
+</div>
+<div class="xxsm_header">OR</div>
+<div class="instruction">
+	<ol>
+	  <li>Upload an image (with a ratio of 1:1) </li>
+	</ol>
+	<div class="choose">
 		<form enctype="multipart/form-data" action="upload.php" method="post">
 	    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
 	    Choose a file to upload: <input name="uploaded_file" type="file" />
     </div>
-    <div class="submit">
+    <div class="upload">
     <input type="submit" value="Upload" />
  		</form> 
  	</div>

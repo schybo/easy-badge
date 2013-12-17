@@ -59,6 +59,15 @@ body {
 	margin-right: auto;
 }
 
+.xxsm_header {
+	width: 100px;
+	font-size: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .instruction {
 	width: 750px;
 	margin-top: 0.5em;
@@ -73,8 +82,22 @@ body {
 	margin-right: auto;
 }
 
+.choose {
+	width: 175px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .submit {
 	width: 100px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.upload {
+	width: 75px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
