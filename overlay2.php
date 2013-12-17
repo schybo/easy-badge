@@ -28,7 +28,7 @@
 <div class="med_header">Thank you for using</div>
 <div class="bmed_header">EasyBadge Creator!</div>
 <div class="sm_header">Please right click the image and choose</div>
-<div class="vsm_header">save as to download them image </div>
+<div class="vsm_header">'Save As' to download them image </div>
 </body>
 </html>
 

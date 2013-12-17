@@ -42,7 +42,7 @@
 	    Choose a file to upload: <input name="uploaded_file" type="file" />
     </div>
     <div class="upload">
-    <input type="submit" value="Upload" />
+    <input type="submit" value="Upload"/>
  		</form> 
  	</div>
 	</br>
@@ -52,7 +52,7 @@
 	  <li><b>Note:</b> You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
 	  <li><b>Note:</b> Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>
 	  <li><b>Note:</b> Currently this badge creator only overlays the image. So no 3D badge creations are available</li>
-	  <li><b>Note:</b> At this time we only support .PNG &#38; .GIF due to limitations of the Heroku hosting</li>
+	  <li><b>Note:</b> At this time we only support .PNG &#38; .GIF due to limitations of the Heroku Buildpack</li>
 	</ul>
 </div>
 <div class="badge_line"><img src="/badge_line.png"></div>
