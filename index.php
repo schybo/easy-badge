@@ -7,7 +7,8 @@
   <title>EasyBadge Creator</title>
   <meta name="description" content="EasyBadge Creator - create badges with fancy rims for gamification in the work place easily">
   <meta name="author" content="SitePoint">
-
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
   <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
 	.header {
@@ -29,6 +30,15 @@
 		<input type="Submit" name="Submit" style="width:100px; height:100px;">
 		</form>
 	</div>
+	<div class="address">
+		<form enctype="multipart/form-data" action="upload.php" method="post">
+	    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+	    Choose a file to upload: <input name="uploaded_file" type="file" />
+    </div>
+    <div class="submit">
+    <input type="submit" value="Upload" />
+ 		</form> 
+ 	</div>
 	</br>
 	<ul>
 	  <li><b>Note:</b> If the image is larger than 100&#42;100, EasyBadge will resize the image (quality could be reduced)</li>
