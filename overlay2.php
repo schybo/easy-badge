@@ -32,6 +32,7 @@ function resize_image($file, $w, $h, $crop=FALSE) {
     return $dst;
 }
 
+echo "Thank you for using EasyBadge Creator 1!";
 //This file path DOES NOT change
 $file2 = 'http://i.imgur.com/JBqXqTW.png';
 
@@ -54,6 +55,7 @@ if ($width == 100 && $height == 100) {
 	$image = resize_image($img_loc, 100, 100);
 }
 
+echo "Thank you for using EasyBadge Creator! 2";
 // Second image (the overlay)
 $overlay = imagecreatefrompng($file2);
 
@@ -71,7 +73,7 @@ $save_file = 'http://easybadge.herokuapp.com/badge.png';
 echo "Thank you for using EasyBadge Creator!";
 header('Content-type: image/png');
 imagepng($image, 'badge.png');
-echo '</br><div style="margin-left: 5%;"><img src="' . $save_file . '"/></div>';
+echo '</br><img src="' . $save_file . '"/>';
 imagedestroy($image);
 
 ?>
