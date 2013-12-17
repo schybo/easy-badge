@@ -65,7 +65,7 @@ imagecopy($image, $overlay, 0, 0, 0, 0, $width, $height);
 imagedestroy($overlay);
 
 //filename to save badge to
-$save_file = '/badge.png';
+$save_file = 'http://easybadge.herokuapp.com/badge.png';
 
 // Output the results
 echo "Thank you for using EasyBadge Creator!";
