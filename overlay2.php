@@ -1,10 +1,11 @@
 <?php 
 
 if (isset($_POST['Submit'])) { 
-	$img_loc = strip_tags($_POST["img_loc"]); 
+	$img_loc = strip_tags($_POST["img_loc"]);
+	echo "Image width " .$img_loc; 
 }
 
-function resize_image($file, $w, $h, $crop=FALSE) {
+/*function resize_image($file, $w, $h, $crop=FALSE) {
     list($width, $height) = getimagesize($file);
     $r = $width / $height;
     if ($crop) {
@@ -70,6 +71,6 @@ echo "Thank you for using EasyBadge Creator!";
 header('Content-type: image/png');
 imagepng($image, 'badge.png');
 echo '</br><div style="margin-left: 5%;"><img src="' . $save_file . '"/></div>';
-imagedestroy($image);
+imagedestroy($image);*/
 
 ?>
