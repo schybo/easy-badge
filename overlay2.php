@@ -33,9 +33,10 @@ function resize_image($file, $w, $h, $crop=FALSE) {
     return $dst;
 }
 
-//echo "Thank you for using EasyBadge Creator 1!";
 //This file path DOES NOT change
-$file2 = 'http://i.imgur.com/JBqXqTW.png';
+//This is the hardcoded badge overlay
+//$file2 = 'http://i.imgur.com/JBqXqTW.png';
+$file2 = '/badge-ring.png';
 
 // First image
 list($width, $height, $type, $attr) = getimagesize($img_loc);
@@ -44,19 +45,17 @@ list($width, $height, $type, $attr) = getimagesize($img_loc);
 //echo "Image type " .IMAGETYPE_PNG;
 
 if ($width == 100 && $height == 100) {
-	$image = imagecreatefrompng($img_loc);
-	/*if ($type == 2) { //Checking to see if it is a JPEG
-		$image = imagecreatefromjpeg($img_loc);
+	if ($type == 1) { //Checking to see if it is a GIF
+		$image = imagecreatefromgif($img_loc);
 	} elseif ($type == 3) { //Checking to see if it is a PNG
 		$image = imagecreatefrompng($img_loc);
 	} else {
 		echo "Sorry that image type is not supported";
-	}*/
+	}
 } else {
 	$image = resize_image($img_loc, 100, 100);
 }
 
-//echo "Thank you for using EasyBadge Creator! 2";
 // Second image (the overlay)
 $overlay = imagecreatefrompng($file2);
 
