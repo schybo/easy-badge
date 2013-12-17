@@ -72,7 +72,6 @@ $save_file = '/badge.png';
 
 // Output the results
 echo "Thank you for using EasyBadge Creator!";
-echo '</br>'
 echo "Please right click the image and choose save as to download them image";
 //header('Content-type: image/png');
 imagepng($image, 'badge.png');
