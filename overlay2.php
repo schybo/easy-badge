@@ -71,7 +71,7 @@ imagedestroy($overlay);
 $save_file = '/badge.png';
 
 // Output the results
-//echo "Thank you for using EasyBadge Creator!";
+echo "Thank you for using EasyBadge Creator!";
 //header('Content-type: image/png');
 imagepng($image, 'badge.png');
 //header("Location: http://easybadge.herokuapp.com/badge.png");
