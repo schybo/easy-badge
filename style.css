@@ -79,6 +79,18 @@ a:active {
 	color: #fff;
 }
 
+.head1 {
+	width: 775px;
+	font-size: 3.5em;
+	margin: 0.75em auto 0 auto;
+}
+
+.head2 {
+	width: 800px;
+	font-size: 1.5em;
+	margin: 0.5em auto 0 auto;
+}
+
 .first {
 	display: inline-block;
 	width: 100%;
@@ -124,7 +136,7 @@ a:active {
 }
 
 .address {
-	width: 240px;
+	width: 250px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;

@@ -7,28 +7,32 @@
   <title>EasyBadge Creator</title>
   <meta name="description" content="EasyBadge Creator - create badges with fancy rims for gamification in the work place easily">
   <meta name="author" content="SitePoint">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
   <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
-  .med_header {
+  .header, .xxsm_header {
     font-family: 'vag_rounded_black_ssibold';
   }
-  .bmed_header {
-    font-family: 'vag_rounded_black_ssibold';
-  }
-  .sm_header {
-    font-family: 'vag_rounded_black_ssibold';
-  }
-  .vsm_header {
-    font-family: 'vag_rounded_black_ssibold';
+  body{
+    font-family: 'cartogothic_stdregular', Helvetica,Arial,sans-serif;
   }
   </style>
+  <!-- Attach our CSS -->
+  <link rel="stylesheet" href="reveal.css"> 
+  
+  <!-- Attach necessary scripts -->
+  <!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+  <script type="text/javascript" src="jquery.reveal.js"></script>
 </head>
 <body>
-<div class="med_header">Thank you for using</div>
-<div class="bmed_header">EasyBadge Creator!</div>
-<div class="sm_header">Please right click the image and choose</div>
-<div class="vsm_header">'Save As' to download them image </div>
+<div class="top">
+  <img src="logo.png">
+</div>
+<div class="first">
+  <div class="head1">Thank you for using EasyBadge</div>
+  <div class="head2">Please right click the image and choose 'Save As' to download them image</div>
 </body>
 </html>
 
@@ -119,7 +123,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             imagepng($image, 'badge.png');
             //header("Location: http://easybadge.herokuapp.com/badge.png");
             //exit();
-            echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
+            echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div>';
             //echo '<img src="' . $save_file . '"/>';
             imagedestroy($image);
             //echo $newname;
