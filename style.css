@@ -136,10 +136,16 @@ a:active {
 }
 
 .address {
-	width: 250px;
+	width: 275px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.error_msg {
+	width: 100%;
+	margin-top: 2em;
+	text-align: center;
 }
 
 .info {
@@ -164,7 +170,7 @@ a:active {
 }
 
 .upload {
-	width: 65px;
+	width: 60px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;

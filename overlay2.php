@@ -71,7 +71,7 @@ function resize_image($file, $w, $h, $crop=FALSE) {
     } elseif ($type == 3) {
       $src = imagecreatefrompng($file);
     } else {
-      echo "Sorry that image type is not supported";
+      echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
     }
     $dst = imagecreatetruecolor($newwidth, $newheight);
     imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
@@ -99,7 +99,7 @@ if ($width == 100 && $height == 100) {
 	} elseif ($type == 3) { //Checking to see if it is a PNG
 	    $image = imagecreatefrompng($newname);
 	} else {
-	    echo "Sorry that image type is not supported";
+	    echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
 	}
 } else {
 	// The function resize_image create the image from the file
