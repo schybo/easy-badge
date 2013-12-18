@@ -130,6 +130,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               //unlink($file_loc);
             }
         } else {
+           echo $newname;
            echo "Error: A problem occurred during file upload!";
         }
       } else {
