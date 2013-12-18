@@ -44,6 +44,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
       $newname = dirname(__FILE__).'/upload/'.$filename;
+      $filepath = dirname(__FILE__).'/upload/'.$filename;
       //Check if the file with the same name is already exists on the server
       if (!file_exists($newname)) {
         //Attempt to move the uploaded file to it's new place
@@ -125,7 +126,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               //echo $newname;
               //array_map('unlink', glob("/upload/*.png"));
               //array_map('unlink', glob("/upload/*.gif"));
-              unlink($newname);
+              unlink($filepath);
               //$file_loc = '/upload/'.$filename;
               //unlink($file_loc);
             }
