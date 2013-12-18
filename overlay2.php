@@ -92,7 +92,15 @@ if ($width == 100 && $height == 100) {
 		echo "Sorry that image type is not supported";
 	}
 } else {
-	$image = resize_image($img_loc, 100, 100);
+	if ($type == 1) { //Checking to see if it is a GIF
+		$temp = resize_image($img_loc, 100, 100);
+		$image = imagecreatefromgif($temp);
+	} elseif ($type == 3) { //Checking to see if it is a PNG
+		$temp = resize_image($img_loc, 100, 100);
+		$image = imagecreatefrompng($temp);
+	} else {
+		echo "Sorry that image type is not supported";
+	}
 }
 
 // Second image (the overlay)
