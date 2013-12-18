@@ -116,18 +116,19 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             //echo '</br>';
             //echo '<div class="sm_header">Please right click the image and choose save as to download them image</div>';
             //header('Content-type: image/png');
-            imagepng($image, 'badge.png');
-            //header("Location: http://easybadge.herokuapp.com/badge.png");
-            //exit();
-            echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
-            //echo '<img src="' . $save_file . '"/>';
-            imagedestroy($image);
-            //echo $newname;
-            //array_map('unlink', glob("/upload/*.png"));
-            //array_map('unlink', glob("/upload/*.gif"));
-            //unlink($newname);
-            $file_loc = '/upload/'.$filename;
-            unlink($file_loc);
+            if ((imagepng($image, 'badge.png')) == TRUE) {
+              //header("Location: http://easybadge.herokuapp.com/badge.png");
+              //exit();
+              echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
+              //echo '<img src="' . $save_file . '"/>';
+              imagedestroy($image);
+              //echo $newname;
+              //array_map('unlink', glob("/upload/*.png"));
+              //array_map('unlink', glob("/upload/*.gif"));
+              unlink($newname);
+              //$file_loc = '/upload/'.$filename;
+              //unlink($file_loc);
+            }
         } else {
            echo "Error: A problem occurred during file upload!";
         }
