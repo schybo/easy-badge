@@ -45,7 +45,7 @@ if (isset($_POST['Submit'])) {
 	//echo "Image width " .$img_loc; 
 
 function resize_image($file, $w, $h, $crop=FALSE) {
-    list($width, $height) = getimagesize($file);
+    list($width, $height, $type, $attr) = getimagesize($file);
     $r = $width / $height;
     if ($crop) {
         if ($width > $height) {
@@ -64,7 +64,15 @@ function resize_image($file, $w, $h, $crop=FALSE) {
             $newwidth = $w;
         }
     }
-    $src = imagecreatefrompng($file);
+    if ($type == 1) {
+      $src = imagecreatefromgif($file);
+    } elseif ($type == 2) {
+      $src = imagecreatefromjpeg($file);
+    } elseif ($type == 3) {
+      $src = imagecreatefrompng($file);
+    } else {
+      echo "Sorry that image type is not supported";
+    }
     $dst = imagecreatetruecolor($newwidth, $newheight);
     imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
 
@@ -85,11 +93,13 @@ list($width, $height, $type, $attr) = getimagesize($img_loc);
 if ($width == 100 && $height == 100) {
 	//$image = imagecreatefrompng($img_loc);
 	if ($type == 1) { //Checking to see if it is a GIF
-		$image = imagecreatefromgif($img_loc);
+	    $image = imagecreatefromgif($newname);
+	} elseif ($type == 2) { //Checking to see if it is a JPEG
+	    $image = imagecreatefromjpeg($newname);
 	} elseif ($type == 3) { //Checking to see if it is a PNG
-		$image = imagecreatefrompng($img_loc);
+	    $image = imagecreatefrompng($newname);
 	} else {
-		echo "Sorry that image type is not supported";
+	    echo "Sorry that image type is not supported";
 	}
 } else {
 	// The function resize_image create the image from the file

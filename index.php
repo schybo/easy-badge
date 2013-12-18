@@ -91,7 +91,7 @@
 	  <li>You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
 	  <li>Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>
 	  <li>Currently this badge creator only overlays the image. So no 3D badge creations are available</li>
-	  <li>At this time we only support .PNG &#38; .GIF due to limitations of the Heroku Buildpack</li>
+	  <li>At this time we only support .PNG, .JPG &#38; .GIF</li>
 	</ul>
 	<a class="close-reveal-modal">&#215;</a>
 </div>	

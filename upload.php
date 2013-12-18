@@ -42,8 +42,9 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   //Check if the file is JPEG image and it's size is less than 350Kb
   $filename = basename($_FILES['uploaded_file']['name']);
   $ext = substr($filename, strrpos($filename, '.') + 1);
-  if ((($ext == "png") && ($_FILES["uploaded_file"]["type"] == "image/png") ||
-    ($ext == "gif") && ($_FILES["uploaded_file"]["type"] == "image/gif")) && 
+  if (((($ext == "png") && ($_FILES["uploaded_file"]["type"] == "image/png")) ||
+    (($ext == "gif") && ($_FILES["uploaded_file"]["type"] == "image/gif")) ||
+    (($ext == "jpg") && ($_FILES["uploaded_file"]["type"] == "image/jpeg"))) && 
     ($_FILES["uploaded_file"]["size"] < 350000)) {
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
@@ -55,7 +56,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
            //echo "It's done! The file has been saved as: ".$newname;
 
             function resize_image($file, $w, $h, $crop=FALSE) {
-                list($width, $height) = getimagesize($file);
+                list($width, $height, $type, $attr) = getimagesize($file);
                 $r = $width / $height;
                 if ($crop) {
                     if ($width > $height) {
@@ -74,7 +75,15 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
                         $newwidth = $w;
                     }
                 }
-                $src = imagecreatefrompng($file);
+                if ($type == 1) {
+                  $src = imagecreatefromgif($file);
+                } elseif ($type == 2) {
+                  $src = imagecreatefromjpeg($file);
+                } elseif ($type == 3) {
+                  $src = imagecreatefrompng($file);
+                } else {
+                  echo "Sorry that image type is not supported";
+                }
                 $dst = imagecreatetruecolor($newwidth, $newheight);
                 imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
 
@@ -93,6 +102,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               //$image = imagecreatefrompng($img_loc);
               if ($type == 1) { //Checking to see if it is a GIF
                 $image = imagecreatefromgif($newname);
+              } elseif ($type == 2) { //Checking to see if it is a JPEG
+                $image = imagecreatefromjpeg($newname);
               } elseif ($type == 3) { //Checking to see if it is a PNG
                 $image = imagecreatefrompng($newname);
               } else {
@@ -139,7 +150,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
          echo "Error: File ".$_FILES["uploaded_file"]["name"]." already exists";
       }
   } else {
-     echo "Error: Only .png &#38; .gif images under 350Kb are accepted for upload";
+     echo "Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload";
   }
 } else {
  echo "Error: No file uploaded";
