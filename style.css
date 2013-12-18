@@ -9,77 +9,132 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'cartogothic_stdregular';
+    src: url('cartogothicstd-book-webfont.eot');
+    src: url('cartogothicstd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('cartogothicstd-book-webfont.woff') format('woff'),
+         url('cartogothicstd-book-webfont.ttf') format('truetype'),
+         url('cartogothicstd-book-webfont.svg#cartogothic_stdregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
 	/*Fix the linear gradient to work on all browser*/
-    background: linear-gradient(rgb(0, 143, 204) 0%, rgb(82, 185, 230) 100%) no-repeat center center fixed;
+    /*background: linear-gradient(rgb(0, 143, 204) 0%, rgb(82, 185, 230) 100%) no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
-  	background-size: cover;
+  	background-size: cover;*/
+  	margin: 0 0 0 0;
+  	padding: 0 0 0 0;
+	color: #333;
 }
 
-.header {
-	width: 700px;
-	font-size: 5em;
-	margin-top: 0.5em;
+.top {
+	width: 100%;
+	height: 5em;
+	background: #fff;
+	/*border-bottom: 3px solid black;*/
+	padding: 1em 0 1em 1em;
+}
+
+.cta {
+	width: 125px;
+	height: 25px;
+	margin: 1.5em auto 0 auto;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	font-size: 1.25em;
+	 background-color: #4ba614; background-image: -webkit-gradient(linear, left top, left bottom, from(#4ba614), to(#008c00));
+	 background-image: -webkit-linear-gradient(top, #4ba614, #008c00);
+	 background-image: -moz-linear-gradient(top, #4ba614, #008c00);
+	 background-image: -ms-linear-gradient(top, #4ba614, #008c00);
+	 background-image: -o-linear-gradient(top, #4ba614, #008c00);
+	 background-image: linear-gradient(to bottom, #4ba614, #008c00);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4ba614, endColorstr=#008c00);
+}
+
+.cta:hover {
+	 background-color: #36780f; background-image: -webkit-gradient(linear, left top, left bottom, from(#36780f), to(#005900));
+	 background-image: -webkit-linear-gradient(top, #36780f, #005900);
+	 background-image: -moz-linear-gradient(top, #36780f, #005900);
+	 background-image: -ms-linear-gradient(top, #36780f, #005900);
+	 background-image: -o-linear-gradient(top, #36780f, #005900);
+	 background-image: linear-gradient(to bottom, #36780f, #005900);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#36780f, endColorstr=#005900);
+}
+
+a:link,
+a:visited {
+	text-decoration:none;
+	color: #fff;
+}
+
+a:hover,
+a:active {
+	text-decoration:none;
+	color: #fff;
+}
+
+.first {
+	display: inline-block;
+	width: 100%;
+	height: 22em;
+	background: #ececec;
+	/*border: 1px solid black;*/
+	margin: 0 0 0 0;
+  	padding: 0 0 0 0;
+}
+
+.second {
+	display: inline-block;
+	width: 100%;
+	height: 22em;
+	background: #fff;
+	/*border: 1px solid black;*/
+	margin: 0 0 0 0;
+  	padding: 0 0 0 0;
+}
+
+.footer {
+	display: inline-block;
+	width: 100%;
+	height: 15em;
+	background: #ececec;
+	/*border: 1px solid black;*/
+	margin: 0 0 0 0;
+  	padding: 0 0 0 0;
+}
+
+.instruction1 {
+	width: 335px;
+	margin-top: 6em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.med_header {
-	width: 600px;
-	font-size: 4em;
-	margin-top: 0.5em;
-	margin-left: auto;
-	margin-right: auto;	
-}
-
-.bmed_header {
-	width: 600px;
-	font-size: 4em;
-	margin-top: 0.05em;
-	margin-left: auto;
-	margin-right: auto;	
-	margin-bottom: 0.5em;
-}
-
-.sm_header {
-	width: 600px;
-	font-size: 2em;
-	margin-top: 0.25em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.vsm_header {
+.instruction2 {
 	width: 500px;
-	font-size: 2em;
-	margin-top: 0.25em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.xxsm_header {
-	width: 100px;
-	font-size: 2em;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.instruction {
-	width: 750px;
-	margin-top: 0.5em;
+	margin-top: 5.5em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .address {
-	width: 250px;
+	width: 240px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.info {
+	width: 100px;
+	margin-top: 0.5em;
+	margin-left: auto;
+	margin-right: auto;	
 }
 
 .choose {
@@ -97,7 +152,7 @@ body {
 }
 
 .upload {
-	width: 75px;
+	width: 65px;
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
@@ -105,7 +160,7 @@ body {
 
 .badge_line {
 	width: 625px;
-	margin-top: 3em;
+	margin-top: 4em;
 	margin-left: auto;
 	margin-right: auto;	
 }
@@ -114,5 +169,5 @@ body {
 	width: 125px;
 	margin-top: 1em;
 	margin-left: auto;
-	margin-right: auto;		
+	margin-right: auto;	
 }
