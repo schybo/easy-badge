@@ -116,7 +116,7 @@ $save_file = '/badge.png';
 imagepng($image, 'badge.png');
 //header("Location: http://easybadge.herokuapp.com/badge.png");
 //exit();
-echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
+echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div>';
 imagedestroy($image);
 
 }
