@@ -44,7 +44,6 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
       $newname = dirname(__FILE__).'/upload/'.$filename;
-      $filepath = dirname(__FILE__).'/upload/'.$filename;
       //Check if the file with the same name is already exists on the server
       if (!file_exists($newname)) {
         //Attempt to move the uploaded file to it's new place
@@ -117,21 +116,19 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             //echo '</br>';
             //echo '<div class="sm_header">Please right click the image and choose save as to download them image</div>';
             //header('Content-type: image/png');
-            if ((imagepng($image, 'badge.png')) == TRUE) {
-              //header("Location: http://easybadge.herokuapp.com/badge.png");
-              //exit();
-              echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
-              //echo '<img src="' . $save_file . '"/>';
-              imagedestroy($image);
-              //echo $newname;
-              //array_map('unlink', glob("/upload/*.png"));
-              //array_map('unlink', glob("/upload/*.gif"));
-              unlink($filepath);
-              //$file_loc = '/upload/'.$filename;
-              //unlink($file_loc);
-            }
+            imagepng($image, 'badge.png');
+            //header("Location: http://easybadge.herokuapp.com/badge.png");
+            //exit();
+            echo '<div class="img_holder"><img src="' . $save_file . '"/></div>';
+            //echo '<img src="' . $save_file . '"/>';
+            imagedestroy($image);
+            //echo $newname;
+            //array_map('unlink', glob("/upload/*.png"));
+            //array_map('unlink', glob("/upload/*.gif"));
+            //unlink($filepath);
+            //$file_loc = '/upload/'.$filename;
+            //unlink($file_loc);
         } else {
-           echo $newname;
            echo "Error: A problem occurred during file upload!";
         }
       } else {
