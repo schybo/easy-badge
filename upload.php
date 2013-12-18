@@ -99,15 +99,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
                 echo "Sorry that image type is not supported";
               }
             } else {
-              if ($type == 1) { //Checking to see if it is a GIF
-                $temp = resize_image($newname, 100, 100);
-                $image = imagecreatefromgif($temp);
-              } elseif ($type == 3) { //Checking to see if it is a PNG
-                $temp = resize_image($newname, 100, 100);
-                $image = imagecreatefrompng($newname);
-              } else {
-                echo "Sorry that image type is not supported";
-              }
+              $image = resize_image($newname, 100, 100);
             }
 
             // Second image (the overlay)
