@@ -11,5 +11,3 @@ Note: You may have to play around with different sizes (such as 90*90) to get th
 Note: Imgur provides easy access to crop and resize your image by clicking 'Edit Image'
 Note: Currently this badge creator only overlays the image. So no 3D badge creations are available
 Note: At this time we only support .PNG & .GIF due to limitations of the Heroku hosting
-
-c

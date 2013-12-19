@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
-  .header, .xxsm_header {
+  .nothing {
     font-family: 'vag_rounded_black_ssibold';
   }
   body{
@@ -28,9 +28,9 @@
 </head>
 <body>
 <div class="top">
-  <img src="logo.png">
+  <img src="logo_bad.png">
 </div>
-<div class="first">
+<div class="first_other">
   <div class="head1">Thank you for using EasyBadge</div>
   <div class="head2">Please right click the image and choose 'Save As' to download them image</div>
 </body>
@@ -129,7 +129,8 @@ $save_file = '/badge.png';
 imagepng($image, 'badge.png');
 //header("Location: http://easybadge.herokuapp.com/badge.png");
 //exit();
-echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+	<div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
 imagedestroy($image);
 
 }
