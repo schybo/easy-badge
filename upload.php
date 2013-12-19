@@ -84,6 +84,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
                 } else {
                   echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+                  exit;
                 }
                 $dst = imagecreatetruecolor($newwidth, $newheight);
                 imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
@@ -110,6 +111,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               } else {
                 echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+                exit;
               }
             } else {
               $image = resize_image($newname, 100, 100);
@@ -155,7 +157,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
       }
   } else {
-     echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+     echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
   }
 } else {
  echo '<div class="error_msg">Error: No file uploaded</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
