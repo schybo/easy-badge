@@ -82,7 +82,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
                 } elseif ($type == 3) {
                   $src = imagecreatefrompng($file);
                 } else {
-                  echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+                  echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
                 }
                 $dst = imagecreatetruecolor($newwidth, $newheight);
                 imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
@@ -107,7 +108,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               } elseif ($type == 3) { //Checking to see if it is a PNG
                 $image = imagecreatefrompng($newname);
               } else {
-                echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+                echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
               }
             } else {
               $image = resize_image($newname, 100, 100);
@@ -134,7 +136,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             imagepng($image, 'badge.png');
             //header("Location: http://easybadge.herokuapp.com/badge.png");
             //exit();
-            echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+            echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
             //echo '<img src="' . $save_file . '"/>';
             imagedestroy($image);
             //echo $newname;
@@ -144,15 +147,18 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             //$file_loc = '/upload/'.$filename;
             //unlink($file_loc);
         } else {
-           echo '<div class="error_msg">Error: A problem occurred during file upload!</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+           echo '<div class="error_msg">Error: A problem occurred during file upload!</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
         }
       } else {
-         echo '<div class="error_msg">Error: File "' .$_FILES["uploaded_file"]["name"]. '" already </div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+         echo '<div class="error_msg">Error: File "' .$_FILES["uploaded_file"]["name"]. '" already </div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
       }
   } else {
      echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
   }
 } else {
- echo '<div class="error_msg">Error: No file uploaded</div></div><div class="badge_line"><img src="/badge_line.png"></div>';
+ echo '<div class="error_msg">Error: No file uploaded</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
 }
 ?>

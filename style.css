@@ -39,11 +39,12 @@ body {
 	background: #fff;
 	/*border-bottom: 3px solid black;*/
 	padding: 1em 0 1em 1em;
+	border-bottom: 1px solid #ccc;
 }
 
 .cta {
-	width: 125px;
-	height: 25px;
+	width: 40px;
+	height: 23px;
 	margin: 1.5em auto 0 auto;
 	border-radius: 5px;
 	text-align: center;
@@ -79,6 +80,14 @@ a:active {
 	color: #fff;
 }
 
+.header {
+	width: 50%;
+	margin: 1em 0 0 1em;
+	text-align: left;
+	font-size: 1.5em;
+	display: inline-block;
+}
+
 .head1 {
 	width: 775px;
 	font-size: 3.5em;
@@ -109,6 +118,7 @@ a:active {
 	/*border: 1px solid black;*/
 	margin: 0 0 0 0;
   	padding: 0 0 0 0;
+  	border-top: 1px solid #ccc;
 }
 
 .footer {
@@ -118,19 +128,20 @@ a:active {
 	background: #ececec;
 	/*border: 1px solid black;*/
 	margin: 0 0 0 0;
-  	padding: 0 0 0 0;
+  	padding: 0 1em 0 2em;
+  	border-top: 1px solid #ccc;
 }
 
 .instruction1 {
 	width: 335px;
-	margin-top: 6em;
+	margin-top: 2em;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .instruction2 {
-	width: 500px;
-	margin-top: 5.5em;
+	width: 425px;
+	margin-top: 2em;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -150,9 +161,11 @@ a:active {
 
 .info {
 	width: 100px;
-	margin-top: 0.5em;
+	display: inline-block;
+	margin-left: 35em;
+	/*margin-top: 0.5em;
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;*/
 }
 
 .choose {
@@ -174,6 +187,32 @@ a:active {
 	margin-top: 0.5em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.contributer {
+	width: 47.5%;
+	text-align: left;
+	margin: 2em 0 0 0;
+	padding: 0 0 0 0;
+	display: inline-block;
+}
+
+.copyright {
+	width: 47.5%;
+	text-align: right;
+	margin: 2em 0 0 0;
+	padding: 0 0 0 0;
+	display: inline-block;
+}
+
+.contributer p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.copyright p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .badge_line {
