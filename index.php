@@ -92,6 +92,7 @@
 	  <li>You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
 	  <li>Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>
 	  <li>Currently this badge creator only overlays the image. So no 3D badge creations are available</li>
+	  <li>If applicable please use a white background instead of a transparent background. Transparency will become black. Not white</li>
 	  <li>At this time we only support .PNG, .JPG &#38; .GIF</li>
 	</ul>
 	<a class="close-reveal-modal">&#215;</a>
