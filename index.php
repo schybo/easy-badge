@@ -27,6 +27,7 @@
   <script type="text/javascript" src="/js/jquery.reveal.js"></script>
 </head>
 <body>
+<?php include_once("analyticstracking.php") ?>
 <div class="top">
 	<img src="/images/logo_bad.png">
 </div>
