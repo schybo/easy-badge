@@ -44,13 +44,13 @@
 	  <li>Upload a square image (ratio of 1:1) </li>
 	</ol>
 	</div>
-	<div class="choose">
+	<div class="choose_holder">
 		<form enctype="multipart/form-data" action="upload.php" method="post">
-	    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-	    Choose a file to upload: <input name="uploaded_file" type="file" />
+	    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+	    Choose a file to upload: <input name="uploaded_file" type="file"/>
     </div>
-    <div class="upload">
-    <input type="submit" value="Upload"/>
+    <div class="upload_holder">
+    <input type="submit" value="Upload" class="upload"/>
  		</form> 
  	</div>
 </div>
@@ -74,7 +74,7 @@
 		<form action="overlay2.php" method="post">
 		Address of image: <input type="text" name="img_loc"><br></div>
 	<div class="submit">
-		<input type="Submit" name="Submit" style="width:100px; height:100px;">
+		<input type="Submit" name="Submit" class="button">
 		</form>
 	</div>
 </div>
