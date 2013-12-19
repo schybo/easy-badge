@@ -9,7 +9,7 @@
   <meta name="author" content="SitePoint">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <link rel="stylesheet" href="/style.css" type="text/css" charset="utf-8" >
+  <link rel="stylesheet" href="/css/style.css" type="text/css" charset="utf-8" >
   <style type="text/css">
 	.nothing {
 		font-family: 'vag_rounded_black_ssibold';
@@ -19,16 +19,16 @@
 	}
   </style>
   <!-- Attach our CSS -->
-  <link rel="stylesheet" href="reveal.css">	
+  <link rel="stylesheet" href="/css/reveal.css">	
 	
   <!-- Attach necessary scripts -->
   <!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
-  <script type="text/javascript" src="jquery.reveal.js"></script>
+  <script type="text/javascript" src="/js/jquery.reveal.js"></script>
 </head>
 <body>
 <div class="top">
-	<img src="logo_bad.png">
+	<img src="/images/logo_bad.png">
 </div>
 <div class="first">
 	<a href="#" class="info" data-reveal-id="myModal" data-animation="fade">
