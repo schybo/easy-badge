@@ -31,14 +31,14 @@
 	<img src="logo_bad.png">
 </div>
 <div class="first">
-	<div class="header">
-		Create a badge from a file on your computer
-	</div>
 	<a href="#" class="info" data-reveal-id="myModal" data-animation="fade">
 		<div class="cta">
 			?
 		</div>
 	</a>
+	<div class="header">
+		Create a badge from a file on your computer
+	</div>
 	<div class="instruction1">
 	<ol>
 	  <li>Upload a square image (ratio of 1:1) </li>
@@ -55,14 +55,14 @@
  	</div>
 </div>
 <div class="second">
-	<div class="header">
-		Create a badge from a file on the web
-	</div>
 	<a href="#" class="info" data-reveal-id="myModal" data-animation="fade">
 		<div class="cta">
 			?
 		</div>
 	</a>
+	<div class="header">
+		Create a badge from a file on the web
+	</div>
 	<div class="instruction2">
 	<ol>
 	  <li>Paste a direct link to a square image (ratio of 1:1)</li>
