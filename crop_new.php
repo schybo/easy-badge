@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     //header("Location: http://easybadge.herokuapp.com/badge.png");
     //exit();
     //echo '<img src="' . $save_file . '"/>';
-    echo '<div class="img_holder"><img src="' . $save_file . '"/></div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+    echo '<div class="img_holder"><img src="' . $save_file . '"/></div><a href="javascript:history.go(-1)"><div class="new_crop">&lt;&lt; Try A New Crop</div></a></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
       <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
     imagedestroy($image);
 
