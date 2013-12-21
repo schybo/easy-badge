@@ -96,11 +96,11 @@ list($width, $height, $type, $attr) = getimagesize($img_loc);
 if ($width == 100 && $height == 100) {
 	//$image = imagecreatefrompng($img_loc);
 	if ($type == 1) { //Checking to see if it is a GIF
-	    $image = imagecreatefromgif($newname);
+	    $image = imagecreatefromgif($img_loc);
 	} elseif ($type == 2) { //Checking to see if it is a JPEG
-	    $image = imagecreatefromjpeg($newname);
+	    $image = imagecreatefromjpeg($img_loc);
 	} elseif ($type == 3) { //Checking to see if it is a PNG
-	    $image = imagecreatefrompng($newname);
+	    $image = imagecreatefrompng($img_loc);
 	} else {
 	    echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
 	<div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
