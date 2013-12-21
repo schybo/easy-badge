@@ -72,7 +72,7 @@
 	</div>
 	<div class="instruction1">
 	<ol>
-	  <li>Upload a square image (ratio of 1:1) </li>
+	  <li>Upload an image</li>
 	</ol>
 	</div>
 	<div class="choose_holder">
@@ -96,7 +96,7 @@
 	</div>
 	<div class="instruction2">
 	<ol>
-	  <li>Paste a direct link to a square image (ratio of 1:1)</li>
+	  <li>Paste a direct link to and image on the web</li>
 	  <!--<li>Upload an square image (ratio of 1:1) to a site that hosts images (Eg. Imgur)</li>
 	  <li>Provide the direct link to the image (on Imgur this is called the 'Direct Link' in the sidebar)</li>-->
 	</ol>
@@ -117,9 +117,9 @@
 <div id="myModal" class="reveal-modal">
 	<h1>More Information</h1>
 	<ul>
-	  <li>If the image is larger than 100&#42;100, EasyBadge will resize the image (quality could be reduced)</li>
-	  <li>To make sure you don't lose quality, try to upload badges than are originally 100&#42;100</li>
-	  <li>You may have to play around with different sizes (such as 90&#42;90) to get the crop that works best</li>
+	  <!--<li>If the image is larger than 100&#42;100, EasyBadge will resize the image (quality could be reduced)</li>-->
+	  <!--<li>To make sure you don't lose quality, try to upload badges than are originally 100&#42;100</li>-->
+	  <li>You may have to play around with different crops to get one that works best</li>
 	  <li>Imgur provides easy access to crop and resize your image by clicking 'Edit Image'</li>
 	  <li>Currently this badge creator only overlays the image. So no 3D badge creations are available</li>
 	  <li>If applicable please use a white background instead of a transparent background. Transparency will become black. Not white</li>
