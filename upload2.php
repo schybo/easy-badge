@@ -39,18 +39,22 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
         } else {
            echo '<div class="error_msg">Error: A problem occurred during file upload!</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+           exit;
         }
       } else {
          echo '<div class="error_msg">Error: File "' .$_FILES["uploaded_file"]["name"]. '" already </div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+         exit;
       }
   } else {
      echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+     exit;
   }
 } else {
  echo '<div class="error_msg">Error: No file uploaded</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+ exit;
 }
 ?>
 
