@@ -76,7 +76,7 @@
 	</ol>
 	</div>
 	<div class="choose_holder">
-		<form enctype="multipart/form-data" action="upload2.php" method="post">
+		<form enctype="multipart/form-data" action="upload.php" method="post">
 	    <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
 	    Choose a file to upload: <input name="uploaded_file" type="file"/>
     </div>
@@ -102,7 +102,7 @@
 	</ol>
 	</div>
 	<div class="address">
-		<form action="crop_web.php" method="post">
+		<form action="overlay2.php" method="post">
 		Address of image: <input type="text" name="img_loc"><br></div>
 	<div class="submit">
 		<input type="Submit" name="Submit" class="button">

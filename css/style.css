@@ -68,6 +68,12 @@ body {
 	 background-image: linear-gradient(to bottom, #36780f, #005900);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#36780f, endColorstr=#005900);
 }
 
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	width: 140px;
+}
+
 a:link,
 a:visited {
 	text-decoration:none;

@@ -6,7 +6,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   $ext = substr($filename, strrpos($filename, '.') + 1);
   if (((($ext == "png") && ($_FILES["uploaded_file"]["type"] == "image/png")) ||
     (($ext == "gif") && ($_FILES["uploaded_file"]["type"] == "image/gif")) ||
-    (($ext == "jpg") && ($_FILES["uploaded_file"]["type"] == "image/jpeg"))) && 
+    ((($ext == "jpg") || ($ext == "jpeg")) && ($_FILES["uploaded_file"]["type"] == "image/jpeg"))) && 
     ($_FILES["uploaded_file"]["size"] < 350000)) {
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
@@ -26,8 +26,9 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             } elseif ($type == 3) { //Checking to see if it is a PNG
                 $image = imagecreatefrompng($newname);
             } else {
+                include_once("top_html.php");
                 echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-            <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+            <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
                 exit;
             }
 
@@ -37,23 +38,27 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             imagedestroy($image);
 
         } else {
+           include_once("top_html.php");
            echo '<div class="error_msg">Error: A problem occurred during file upload!</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
            exit;
         }
       } else {
+         include_once("top_html.php");
          echo '<div class="error_msg">Error: File "' .$_FILES["uploaded_file"]["name"]. '" already </div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
          exit;
       }
   } else {
+     include_once("top_html.php");
      echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
      exit;
   }
 } else {
+ include_once("top_html.php");
  echo '<div class="error_msg">Error: No file uploaded</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
  exit;
 }
 ?>
@@ -61,7 +66,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Live Cropping Demo</title>
+  <title>EasyBadge Creator</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
   <script src="/js/jquery.min.js"></script>
   <script src="/js/jquery.Jcrop.js"></script>
@@ -145,7 +150,9 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
             <input type="hidden" id="y" name="y" />
             <input type="hidden" id="w" name="w" />
             <input type="hidden" id="h" name="h" />
-            <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+            <div class="center">
+              <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+            </div>
         </form>
 
     </div>

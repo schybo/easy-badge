@@ -7,7 +7,6 @@ if (isset($_POST['Submit'])) {
   //echo "Image width " .$img_loc; 
 
   list($width, $height, $type, $attr) = getimagesize($img_loc);
-  echo "Image width " .$width; 
 
   if ($type == 1) { //Checking to see if it is a GIF
       $image = imagecreatefromgif($img_loc);
@@ -16,8 +15,9 @@ if (isset($_POST['Submit'])) {
   } elseif ($type == 3) { //Checking to see if it is a PNG
       $image = imagecreatefrompng($img_loc);
   } else {
+      include_once("top_html.php");
       echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Copyright &#169; Brent Scheibelhut</p></div>';
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
       exit;
   }
 
@@ -120,7 +120,9 @@ if (isset($_POST['Submit'])) {
             <input type="hidden" id="y" name="y" />
             <input type="hidden" id="w" name="w" />
             <input type="hidden" id="h" name="h" />
-            <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+            <div class="center">
+              <input type="submit" value="Crop Image" class="btn btn-large btn-inverse" />
+            </div>
         </form>
 
     </div>
