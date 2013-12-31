@@ -7,7 +7,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   if (((($ext == "png") && ($_FILES["uploaded_file"]["type"] == "image/png")) ||
     (($ext == "gif") && ($_FILES["uploaded_file"]["type"] == "image/gif")) ||
     ((($ext == "jpg") || ($ext == "jpeg")) && ($_FILES["uploaded_file"]["type"] == "image/jpeg"))) && 
-    ($_FILES["uploaded_file"]["size"] < 350000)) {
+    ($_FILES["uploaded_file"]["size"] < 500000)) {
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
       //$newname = dirname(__FILE__).'/upload/'.$filename;
@@ -92,7 +92,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
       }*/
   } else {
      include_once("top_html.php");
-     echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+     echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 500Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
      exit;
   }
