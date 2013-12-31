@@ -38,7 +38,7 @@ body {
 	height: 5em;
 	background: #fff;
 	/*border-bottom: 3px solid black;*/
-	padding: 1em 0 1em 1em;
+	padding: 1em 0 1em 0;
 	border-bottom: 1px solid #ccc;
 }
 
@@ -94,6 +94,17 @@ a:active {
 	display: inline-block;
 }
 
+.work_logo {
+	display: inline-block;
+	float: right;
+	margin-right: 1.5em;
+}
+
+.head_logo {
+	display: inline-block;
+	margin-left: 1em;
+}
+
 .head1 {
 	width: 775px;
 	font-size: 3.5em;
@@ -145,7 +156,7 @@ a:active {
 	background: #ececec;
 	/*border: 1px solid black;*/
 	margin: 0 0 0 0;
-  	padding: 0 1em 0 0;
+  	padding: 0 0 0 0;
   	border-top: 1px solid #ccc;
 }
 
@@ -161,7 +172,7 @@ a:active {
 }
 
 .instruction1 {
-	width: 310px;
+	width: 185px;
 	margin-top: 2em;
 	margin-left: auto;
 	margin-right: auto;

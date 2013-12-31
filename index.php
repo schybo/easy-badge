@@ -59,7 +59,12 @@
 <body>
 <?php include_once("analyticstracking.php") ?>
 <div class="top">
-	<img src="/images/logo_bad.png">
+	<div class="head_logo">
+		<img src="/images/logo_bad.png">
+	</div>
+	<div class="work_logo">
+		<img src="/images/work_blue.jpg">
+	</div>
 </div>
 <div class="first">
 	<a href="#" class="info" data-reveal-id="myModal" data-animation="fade">
