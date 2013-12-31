@@ -63,7 +63,7 @@
 		<img src="/images/logo_bad.png">
 	</div>
 	<div class="work_logo">
-		<img src="/images/work_blue.jpg">
+		<a href="http://work.com"><img src="/images/work_blue.jpg"></a>
 	</div>
 </div>
 <div class="first">

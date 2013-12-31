@@ -6,19 +6,62 @@ if (isset($_POST['Submit'])) {
   $img_loc = strip_tags($_POST["img_loc"]);
   //echo "Image width " .$img_loc; 
 
+  function resize_width($file, $w) {
+      // Loading the image and getting the original dimensions
+      list($width, $height, $type, $attr) = getimagesize($file);
+
+      if ($type == 1) {
+        $image = imagecreatefromgif($file);
+      } elseif ($type == 2) {
+        $image = imagecreatefromjpeg($file);
+      } elseif ($type == 3) {
+        $image = imagecreatefrompng($file);
+      } else {
+        include_once("top_html.php");
+        echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+<div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
+        exit;
+      }
+
+      $orig_width = imagesx($image);
+      $orig_height = imagesy($image);
+      $width = $w;
+
+      // Calc the new height
+      $height = (($orig_height * $width) / $orig_width);
+
+      // Create new image to display
+      $new_image = imagecreatetruecolor($width, $height);
+
+      // Create new image with changed dimensions
+      imagecopyresized($new_image, $image,
+        0, 0, 0, 0,
+        $width, $height,
+        $orig_width, $orig_height);
+
+      return $new_image;
+  }
+
+
+
   list($width, $height, $type, $attr) = getimagesize($img_loc);
 
-  if ($type == 1) { //Checking to see if it is a GIF
-      $image = imagecreatefromgif($img_loc);
-  } elseif ($type == 2) { //Checking to see if it is a JPEG
-      $image = imagecreatefromjpeg($img_loc);
-  } elseif ($type == 3) { //Checking to see if it is a PNG
-      $image = imagecreatefrompng($img_loc);
+
+  if ($width > 880) {
+    $image = resize_width($img_loc, 700);
   } else {
-      include_once("top_html.php");
-      echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
-      exit;
+    if ($type == 1) { //Checking to see if it is a GIF
+        $image = imagecreatefromgif($img_loc);
+    } elseif ($type == 2) { //Checking to see if it is a JPEG
+        $image = imagecreatefromjpeg($img_loc);
+    } elseif ($type == 3) { //Checking to see if it is a PNG
+        $image = imagecreatefrompng($img_loc);
+    } else {
+        include_once("top_html.php");
+        echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+    <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
+        exit;
+    }
   }
 
   //filename to save badge to
@@ -100,7 +143,12 @@ if (isset($_POST['Submit'])) {
 </head>
 <body>
 <div class="top">
-  <img src="/images/logo_bad.png">
+  <div class="head_logo">
+    <a href="/index.php"><img src="/images/logo_bad.png"></a>
+  </div>
+  <div class="work_logo">
+    <a href="http://work.com"><img src="/images/work_blue.jpg"></a>
+  </div>
 </div>
 <div class="container">
 <div class="row">

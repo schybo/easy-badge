@@ -29,7 +29,12 @@
 <body>
 <?php include_once("analyticstracking.php") ?>
 <div class="top">
-  <img src="/images/logo_bad.png">
+  <div class="head_logo">
+    <a href="/index.php"><img src="/images/logo_bad.png"></a>
+  </div>
+  <div class="work_logo">
+    <a href="http://work.com"><img src="/images/work_blue.jpg"></a>
+  </div>
 </div>
 <div class="first_other">
   <div class="head1">Thank you for using EasyBadge</div>

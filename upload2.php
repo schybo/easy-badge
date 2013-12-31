@@ -17,19 +17,59 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
         if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$newname))) {
            //echo "It's done! The file has been saved as: ".$newname;
 
+            function resize_width($file, $w) {
+                // Loading the image and getting the original dimensions
+                list($width, $height, $type, $attr) = getimagesize($file);
+
+                if ($type == 1) {
+                  $image = imagecreatefromgif($file);
+                } elseif ($type == 2) {
+                  $image = imagecreatefromjpeg($file);
+                } elseif ($type == 3) {
+                  $image = imagecreatefrompng($file);
+                } else {
+                  include_once("top_html.php");
+                  echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+  <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
+                  exit;
+                }
+
+                $orig_width = imagesx($image);
+                $orig_height = imagesy($image);
+                $width = $w;
+
+                // Calc the new height
+                $height = (($orig_height * $width) / $orig_width);
+
+                // Create new image to display
+                $new_image = imagecreatetruecolor($width, $height);
+
+                // Create new image with changed dimensions
+                imagecopyresized($new_image, $image,
+                  0, 0, 0, 0,
+                  $width, $height,
+                  $orig_width, $orig_height);
+
+                return $new_image;
+            }
+
             list($width, $height, $type, $attr) = getimagesize($newname);
 
-            if ($type == 1) { //Checking to see if it is a GIF
-                $image = imagecreatefromgif($newname);
-            } elseif ($type == 2) { //Checking to see if it is a JPEG
-                $image = imagecreatefromjpeg($newname);
-            } elseif ($type == 3) { //Checking to see if it is a PNG
-                $image = imagecreatefrompng($newname);
+            if ($width > 880) {
+              $image = resize_width($newname, 700);
             } else {
-                include_once("top_html.php");
-                echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
-            <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
-                exit;
+              if ($type == 1) { //Checking to see if it is a GIF
+                  $image = imagecreatefromgif($newname);
+              } elseif ($type == 2) { //Checking to see if it is a JPEG
+                  $image = imagecreatefromjpeg($newname);
+              } elseif ($type == 3) { //Checking to see if it is a PNG
+                  $image = imagecreatefrompng($newname);
+              } else {
+                  include_once("top_html.php");
+                  echo '<div class="error_msg">Sorry that image type is not supported</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
+              <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
+                  exit;
+              }
             }
 
             imagejpeg($image, 'pre.jpg');
@@ -130,7 +170,12 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
 </head>
 <body>
 <div class="top">
-  <img src="/images/logo_bad.png">
+  <div class="head_logo">
+    <a href="/index.php"><img src="/images/logo_bad.png"></a>
+  </div>
+  <div class="work_logo">
+    <a href="http://work.com"><img src="/images/work_blue.jpg"></a>
+  </div>
 </div>
 <div class="container">
 <div class="row">
