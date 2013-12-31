@@ -10,9 +10,10 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
     ($_FILES["uploaded_file"]["size"] < 350000)) {
     //Determine the path to which we want to save this file
       //$temp_file = tempnam(sys_get_temp_dir(), $_FILES['uploaded_file']['name']);
-      $newname = dirname(__FILE__).'/upload/'.$filename;
+      //$newname = dirname(__FILE__).'/upload/'.$filename;
+      $newname = dirname(__FILE__).'/upload/upload.'.$ext;
       //Check if the file with the same name is already exists on the server
-      if (!file_exists($newname)) {
+      //if (!file_exists($newname)) {
         //Attempt to move the uploaded file to it's new place
         if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$newname))) {
            //echo "It's done! The file has been saved as: ".$newname;
@@ -83,12 +84,12 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
            exit;
         }
-      } else {
+      /*} else {
          include_once("top_html.php");
          echo '<div class="error_msg">Error: File "' .$_FILES["uploaded_file"]["name"]. '" already </div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
   <div class="copyright"><p>Contact brent@scheibelhut.com For Bug Fixes</p></div>';
          exit;
-      }
+      }*/
   } else {
      include_once("top_html.php");
      echo '<div class="error_msg">Error: Only .png, .jpg &#38; .gif images under 350Kb are accepted for upload</div></div><div class="badge_line"><img src="/badge_line.png"></div><div class="contributer"><p>Created by Brent Scheibelhut</p></div>
