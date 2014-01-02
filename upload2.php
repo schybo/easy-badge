@@ -18,7 +18,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
         if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$newname))) {
            //echo "It's done! The file has been saved as: ".$newname;
 
-            session_start(void);
+            //session_start(void);
 
             function resize_width($file, $w) {
                 // Loading the image and getting the original dimensions
