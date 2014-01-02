@@ -82,16 +82,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     imagecopy($image, $overlay, 0, 0, 0, 0, $width, $height);
     imagedestroy($overlay);
 
+    //WILL NOT WORK LOCALLY
     //filename to save badge to
     //$save_file = "/badge.png";
     $draft_save_file = tempnam("/", "badge") . ".png";
     $save_file = str_replace("/tmp", "", $draft_save_file);
-    echo $save_file;
+    //echo $save_file;
     //$save_file = '/badge.png';
     $good_save = str_replace("/", "", $save_file);
     //$good_save = $save_file;
     //$good_save = "badge.png";
-    echo $good_save;
+    //echo $good_save;
     //echo $good_save;
 
     imagepng($image, $good_save);
