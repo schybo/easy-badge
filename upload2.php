@@ -18,6 +18,8 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
         if ((move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$newname))) {
            //echo "It's done! The file has been saved as: ".$newname;
 
+            session_start(void);
+
             function resize_width($file, $w) {
                 // Loading the image and getting the original dimensions
                 list($width, $height, $type, $attr) = getimagesize($file);
@@ -73,7 +75,20 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
               }
             }
 
-            imagejpeg($image, 'pre.jpg');
+            //filename to save badge to
+            //$save_file = '/pre.png';
+            $temp_name = tempnam("/", "pre") . ".jpg";
+            $temp2_name = str_replace("/tmp", "", $temp_name);
+            //$save_file = str_replace("/tmp", "", $temp_name);
+            //echo $save_file;
+            //$save_file = '/badge.png';
+            //$good_save = str_replace("/", "", $save_file);
+            //$pre_image = str_replace("/", "", $temp_name);
+            $pre_image = str_replace("/", "", $temp2_name);
+            //$_POST['pre_pic'] = $pre_image; 
+            //echo $pre_image;
+
+            imagejpeg($image, $pre_image);
             //header("Location: http://easybadge.herokuapp.com/badge.png");
             //exit();
             imagedestroy($image);
@@ -188,10 +203,10 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
 </div>
 
         <!-- This is the image we're attaching Jcrop to -->
-        <img src="pre.jpg" id="cropbox" />
+        <img src="<?php echo $pre_image ?>" id="cropbox" />
 
         <!-- This is the form that our event handler fills -->
-        <form action="crop_new.php" method="post" onsubmit="return checkCoords();">
+        <form action="crop_new.php?pre_image=<?php echo $pre_image ?>" method="post" onsubmit="return checkCoords();">
             <input type="hidden" id="x" name="x" />
             <input type="hidden" id="y" name="y" />
             <input type="hidden" id="w" name="w" />

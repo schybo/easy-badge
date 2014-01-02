@@ -46,11 +46,16 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
+    
+    //$pre_pic = $_SESSION['pre_pic'];
+    //echo $pre_pic;
     $targ_w = $targ_h = 100;
     $jpeg_quality = 90;
     $output_filename = 'cropped.png';
 
-    $src = 'pre.jpg';
+    $src = $_REQUEST['pre_image'];
+    //echo $src;
+    //$src = 'pre.jpg';
     $img_r = imagecreatefromjpeg($src);
     $dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 
