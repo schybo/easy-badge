@@ -83,9 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     imagedestroy($overlay);
 
     //filename to save badge to
-    $save_file = '/badge.png';
+    $save_file = tempnam("/", "badge") . ".png";
+    //echo $save_file;
+    //$save_file = '/badge.png';
+    $good_save = str_replace("/", "", $save_file);
+    //echo $good_save;
 
-    imagepng($image, 'badge.png');
+    imagepng($image, $good_save);
     //header("Location: http://easybadge.herokuapp.com/badge.png");
     //exit();
     //echo '<img src="' . $save_file . '"/>';
