@@ -38,7 +38,7 @@
 </div>
 <div class="first_other">
   <div class="head1">Thank you for using EasyBadge</div>
-  <div class="head2">Please right click the image and choose 'Save As' to download them image</div>
+  <div class="head2">Please right click the image and choose 'Save As' to download the image</div>
 </body>
 </html>
 
