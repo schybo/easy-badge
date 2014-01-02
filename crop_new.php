@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $save_file = tempnam("/", "badge") . ".png";
     echo $save_file;
     //$save_file = '/badge.png';
-    //$good_save = str_replace("/t", "t", $save_file);
-    $good_save = $save_file;
+    $good_save = str_replace("/t", "t", $save_file);
+    //$good_save = $save_file;
     echo $good_save;
 
     imagepng($image, $good_save);
