@@ -53,8 +53,6 @@
 	
   <!-- Attach necessary scripts -->
   <!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
-  <script type="text/javascript" src="/js/jquery.reveal.js"></script>
 </head>
 <body>
 <?php include_once("analyticstracking.php") ?>
@@ -131,6 +129,8 @@
 	  <li>At this time we only support .PNG, .JPG &#38; .GIF</li>
 	</ul>
 	<a class="close-reveal-modal">&#215;</a>
-</div>	
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="/js/jquery.reveal.js"></script>	
 </body>
 </html>
