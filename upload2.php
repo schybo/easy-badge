@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 //Сheck that we have a file
 if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0)) {
   //Check if the file is JPEG image and it's size is less than 350Kb
